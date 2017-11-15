@@ -14,7 +14,7 @@ package "apache2" do
 end
 
 service "apache2" do
-    action [:stop, :enable]
+    action [:start, :enable]
 end
 
 cookbook_file '/var/www/index.html' do
