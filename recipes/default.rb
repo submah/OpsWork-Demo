@@ -5,19 +5,19 @@
 # All rights reserved - Do Not Redistribute
 #
 
-execute "apt-get update" do
-    command "apt-get update"
+execute "yum update" do
+    command "yum update"
 end
 
-package "apache2" do
+package "httpd" do
     action :install
 end
 
-service "apache2" do
+service "httpd" do
     action [:start, :enable]
 end
 
-cookbook_file '/var/www/index.html' do
-    source 'index.html'
+cookbook_file "/var/www/html/index.html" do
+    source "index.html"
     mode '0644'
 end
